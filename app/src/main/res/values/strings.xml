@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Playschool_Support</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_message">Message</string>
+    <string name="title_profile">Profile</string>
+</resources>

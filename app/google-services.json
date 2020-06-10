@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "599013413519",
+    "firebase_url": "https://playschoolsupport.firebaseio.com",
+    "project_id": "playschoolsupport",
+    "storage_bucket": "playschoolsupport.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599013413519:android:55d6a80d1951dbe4e456fa",
+        "android_client_info": {
+          "package_name": "com.example.playschool_support"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599013413519-87rhns013c00e1cflgt1iqoe60r5hns7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.playschool_support",
+            "certificate_hash": "f50fbb9e00182ed4f722df91a99f187a1c2852a5"
+          }
+        },
+        {
+          "client_id": "599013413519-qo6r4m3vmja3h944j2bal4lgj4j8dvk4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX41z9O_smuPVi5UQWFrtGkkxpehDB0G0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599013413519-qo6r4m3vmja3h944j2bal4lgj4j8dvk4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
