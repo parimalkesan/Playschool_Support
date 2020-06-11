@@ -28,35 +28,41 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //inflate all the fields
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         fAuth = FirebaseAuth.getInstance();
         loginBtn= findViewById(R.id.login_button);
 
+        //set onclick listener on login button
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String Email = email.getText().toString().trim();
                 String Password = password.getText().toString().trim();
 
+                //check for empty emailfield
                 if(TextUtils.isEmpty(Email))
                 {
                     email.setError("Please enter your Email!");
                     return;
                 }
+                //check for empty password field
                 if(TextUtils.isEmpty(Password))
                 {
                     password.setError("Please enter your Password!");
                     return;
                 }
 
+                //sign in using firebase email and password method
                 fAuth.signInWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful())
                         {
+                            //move to BottomNavigation Activity
                             Toast.makeText(LoginActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                            startActivity(new Intent(getApplicationContext(),BottomNavigationActivity.class));
                         }
                         else
                         {
@@ -66,7 +72,10 @@ public class LoginActivity extends AppCompatActivity {
                 });
             }
         });
-       
+    }
 
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 }
