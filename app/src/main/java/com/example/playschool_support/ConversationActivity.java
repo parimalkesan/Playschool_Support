@@ -54,7 +54,6 @@ public class ConversationActivity extends AppCompatActivity {
     ConversationAdapter conversationAdapter;
     //list to store messages between users
     List<Message> messageList;
-
     RecyclerView recyclerView;
 
     //to check whether user has seen a message
@@ -149,7 +148,7 @@ public class ConversationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 dbReference=FirebaseDatabase.getInstance().getReference("chats");
-                dbReference.addValueEventListener(new ValueEventListener() {
+                dbReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {

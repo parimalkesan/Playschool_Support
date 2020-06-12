@@ -126,7 +126,6 @@ public class SupportFragment extends Fragment {
 
     private void getUserLists()
     {
-
         unresList=new ArrayList<>();
         resList=new ArrayList<>();
 
@@ -175,6 +174,17 @@ public class SupportFragment extends Fragment {
                                     } else {
                                         resList.add(user);
                                     }
+                                }
+                            }
+                        }
+                        //remove user from reslist if it is already there in unreslist
+                        for(int i=0;i<unresList.size();i++)
+                        {
+                            for(int j=0;j<resList.size();j++)
+                            {
+                                if(resList.get(j)==unresList.get(i))
+                                {
+                                    resList.remove(j);
                                 }
                             }
                         }
