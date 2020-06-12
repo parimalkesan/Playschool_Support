@@ -5,6 +5,7 @@ import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,6 +34,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationAdapte
 
     public static final int MESSAGE_LEFT = 0;
     public static final int MESSAGE_RIGHT = 1;
+
 
     FirebaseUser firebaseUser;
 

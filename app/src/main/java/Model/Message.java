@@ -6,6 +6,7 @@ public class Message {
     private String message;
     private String isSeen;
     private String timestamp;
+    private String isResolved;
 
     public String getTimestamp() {
         return timestamp;
@@ -15,13 +16,16 @@ public class Message {
         this.timestamp = timestamp;
     }
 
-    public Message(String isSeen, String message, String receiverId, String senderId, String timestamp) {
+    public Message(String isResolved,String isSeen, String message, String receiverId, String senderId, String timestamp) {
         this.message = message;
         this.receiverId = receiverId;
         this.senderId = senderId;
         this.isSeen=isSeen;
         this.timestamp=timestamp;
+        this.isResolved=isResolved;
     }
+
+
 
 
     public String getIsSeen() {
@@ -58,6 +62,14 @@ public class Message {
 
     public String getMessage() {
         return message;
+    }
+
+    public String getIsResolved() {
+        return isResolved;
+    }
+
+    public void setIsResolved(String isResolved) {
+        this.isResolved = isResolved;
     }
 }
 

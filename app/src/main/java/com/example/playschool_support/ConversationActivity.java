@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -44,7 +45,7 @@ public class ConversationActivity extends AppCompatActivity {
 
     FirebaseFirestore firebaseFirestore;
     FirebaseUser firebaseUser;
-    DatabaseReference dbReference;
+    public DatabaseReference dbReference;
 
     //button to send a message
     ImageButton buttonSend;
@@ -58,6 +59,10 @@ public class ConversationActivity extends AppCompatActivity {
 
     //to check whether user has seen a message
     ValueEventListener seenLis;
+    ValueEventListener resolvedlistener;
+
+    //get resolveButton
+    private Button resolveButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +97,9 @@ public class ConversationActivity extends AppCompatActivity {
 
         //get other user's id from calling intent
         final String userId = getIntent().getStringExtra("userid");
+
+        //call this method to set a message as resolved
+        setMessageResolved(userId);
 
         //add listener to send button
         buttonSend.setOnClickListener(new View.OnClickListener() {
@@ -134,6 +142,38 @@ public class ConversationActivity extends AppCompatActivity {
         seenMessage(userId);
     }
 
+    //method to set a message as resolved by the support manager
+    private void setMessageResolved(final String userId) {
+        resolveButton = (Button) findViewById(R.id.resolveButton);
+        resolveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dbReference=FirebaseDatabase.getInstance().getReference("chats");
+                dbReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            //check for msgs between current user and other user
+                            Message message = dataSnapshot1.getValue(Message.class);
+                            if (firebaseUser != null && firebaseUser.getUid().equals(message.getSenderId()) && userId.equals(message.getReceiverId())
+                                    || firebaseUser != null && userId.equals(message.getSenderId()) && firebaseUser.getUid().equals(message.getReceiverId())) {
+                                HashMap<String, Object> hashMap = new HashMap<>();
+                                hashMap.put("isResolved", "true");
+                                dataSnapshot1.getRef().updateChildren(hashMap);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    }
+
+                });
+
+            }
+        });
+    }
+
     //to check if a message has been seen by other user
     private void seenMessage(final String userId)
     {
@@ -174,6 +214,7 @@ public class ConversationActivity extends AppCompatActivity {
         hashMap.put("message",message);
         hashMap.put("isSeen","false");
         hashMap.put("timestamp",timestamp);
+        hashMap.put("isResolved","false");
 
         dbReference.child("chats").push().setValue(hashMap);
     }
