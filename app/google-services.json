@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "701067401793",
+    "firebase_url": "https://studymania-1588573186494.firebaseio.com",
+    "project_id": "studymania-1588573186494",
+    "storage_bucket": "studymania-1588573186494.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701067401793:android:e0c3e4950815a490b504c0",
+        "android_client_info": {
+          "package_name": "com.example.playschool_support"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701067401793-8lg58886s1ks436l8hpgsbm8si84ksuh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.playschool_support",
+            "certificate_hash": "4b76ea4253a10f4866d4528ea2f10b6b00b467c2"
+          }
+        },
+        {
+          "client_id": "701067401793-mhhtjqnuc3voa12t1fp16sec1iotlv02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQHB0pS2kEdLBoSBxfbOkIGiXsB2kaFEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701067401793-mhhtjqnuc3voa12t1fp16sec1iotlv02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701067401793:android:045f87efb885958bb504c0",
+        "android_client_info": {
+          "package_name": "parimal.examples.studymania"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701067401793-mhhtjqnuc3voa12t1fp16sec1iotlv02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQHB0pS2kEdLBoSBxfbOkIGiXsB2kaFEk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701067401793-mhhtjqnuc3voa12t1fp16sec1iotlv02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

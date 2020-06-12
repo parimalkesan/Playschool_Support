@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConversationActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e6e6e6">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:popupTheme="@style/menustyle">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/prof_image_chat"
+                android:layout_width="35dp"
+                android:layout_height="35dp" />
+
+            <TextView
+                android:id="@+id/userName_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="userName"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/resolveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@color/colorPrimary"
+                android:text="Resolve"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textColorLink="#FFFFFF"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/msg_recycler_view"
+        android:layout_above="@id/rel_layout"
+        android:layout_below="@id/appbar_layout"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:id="@+id/rel_layout"
+        android:padding="5dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/button_msg_send"
+            android:id="@+id/msg_to_send_edt"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:hint="Type a Message"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
+            android:textColor="#000000"/>
+
+        <ImageButton
+            android:id="@+id/button_msg_send"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:drawable/ic_menu_send" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:text="http://schemas.android.com/tools">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/user_prof_image"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UserName"
+        android:id="@+id/userName_tv"
+        android:layout_toEndOf="@id/user_prof_image"
+        android:layout_toRightOf="@id/user_prof_image"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userName_tv"
+        android:layout_toRightOf="@id/user_prof_image"
+        android:layout_marginTop="10dp"
+        android:paddingTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:maxLines="1"
+        android:id="@+id/last_msg_tv"
+        android:textSize="15dp"
+        android:textColor="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/user_timestamp"
+        android:text="05:59pm"
+        android:textSize="14sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"/>
+
+
+
+
+
+</RelativeLayout>
