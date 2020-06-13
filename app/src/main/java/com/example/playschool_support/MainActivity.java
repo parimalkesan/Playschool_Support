@@ -9,6 +9,7 @@ import android.os.Handler;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 //display splash screen
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
         //hide action bar for splash screen
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
+        //set offline capability for data
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        FirebaseDatabase.getInstance().getReference("chats").keepSynced(true);
 
         new Handler().postDelayed(new Runnable() {
             @Override

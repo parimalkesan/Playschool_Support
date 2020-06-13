@@ -50,19 +50,9 @@ public class ProfileFragment extends Fragment {
         firebaseFirestore=FirebaseFirestore.getInstance();
 
         //set email and image for current user
-        DocumentReference docRef = firebaseFirestore.collection("Users").document(firebaseUser.getUid());
-        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Users user = documentSnapshot.toObject(Users.class);
-                prof_email.setText(user.getEmail());
-                if ("default".equals(user.getImageUrl())) {
-                    prof_image_view.setImageResource(R.mipmap.ic_launcher);
-                } else {
-                        Glide.with(getContext()).load(user.getImageUrl()).into(prof_image_view);
-                }
-            }
-        });
+        prof_email.setText(firebaseUser.getEmail());
+        prof_image_view.setImageResource(R.mipmap.ic_launcher);
+
         return view;
     }
 }
