@@ -16,6 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="UnResoved"
+            android:textColor="#ffffff"
+            android:background="#ff0000"
             android:textSize="22sp"
             android:textStyle="bold"
             android:gravity="center_horizontal"></TextView>
@@ -23,7 +25,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/unresolved_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent"
+            android:background="#e6e6e6"></androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
 
@@ -37,6 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Resoved"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimary"
             android:textSize="22sp"
             android:textStyle="bold"
             android:gravity="center_horizontal"></TextView>
@@ -44,6 +49,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#e6e6e6"
             android:id="@+id/resolved_recyclerview"></androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
